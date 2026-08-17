@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dhanya — Personal Portfolio Website
 
 > **Full Stack Web Development Intern Task 1 — Future Interns (2026)**
@@ -173,3 +174,7 @@ All content is centralized in `src/data.js`. To update skills, projects, or cour
 ## License
 
 © 2026 Dhanya. All rights reserved.
+=======
+# Future_FS_01
+Portfolio Website
+>>>>>>> cae215d172cef1ca56f34622af2700f92d9c140c
