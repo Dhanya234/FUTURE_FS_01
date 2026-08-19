@@ -170,6 +170,50 @@ body {
 .section { padding: 96px 0; }
 .section-alt { background: #080808; }
 
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+
+  /* Hero */
+  .hero-grid { display: flex !important; flex-direction: column !important; gap: 40px !important; }
+  .hero-title { font-size: 52px !important; }
+  .hero-subtitle { font-size: 14px !important; }
+  .hero-desc { font-size: 14px !important; }
+
+  /* About */
+  .about-grid { display: flex !important; flex-direction: column !important; gap: 32px !important; }
+  .about-photo { align-items: center !important; }
+
+  /* Projects */
+  .projects-grid { display: flex !important; flex-direction: column !important; }
+  .project-number { font-size: 36px !important; }
+  .project-type { font-size: 10px !important; max-width: 140px; text-align: right; }
+  .features-grid { grid-template-columns: 1fr !important; }
+
+  /* Education */
+  .edu-grid { display: flex !important; flex-direction: column !important; }
+
+  /* Profiles */
+  .profiles-grid { display: flex !important; flex-direction: column !important; }
+  .profile-inner { flex-direction: column !important; align-items: flex-start !important; }
+
+  /* Contact */
+  .contact-grid { display: flex !important; flex-direction: column !important; }
+
+  /* Info cards 2-col stays on mobile */
+  .info-cards { grid-template-columns: 1fr 1fr !important; }
+
+  /* Skills */
+  .skills-grid { display: flex !important; flex-direction: column !important; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 42px !important; }
+  .info-cards { grid-template-columns: 1fr !important; }
+  .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+  .hero-btns { flex-direction: column !important; }
+}
+
 /* Form inputs */
 .form-input {
   width: 100%;

@@ -1,18 +1,6 @@
 import { motion } from 'framer-motion';
-import { Download, ArrowRight, Terminal } from 'lucide-react';
+import { Download, ArrowRight } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
-
-const codeLines = [
-  { indent: 0, text: 'const developer = {',        color: '#cdd6f4' },
-  { indent: 1, text: 'name:      "Dhanya",',        color: '#cba6f7' },
-  { indent: 1, text: 'role:      "Full-Stack Dev",', color: '#cba6f7' },
-  { indent: 1, text: 'stack:     ["React", "Node", "MongoDB"],', color: '#a6e3a1' },
-  { indent: 1, text: 'cgpa:      9.97,',            color: '#fab387' },
-  { indent: 1, text: 'available: true,',            color: '#a6e3a1' },
-  { indent: 0, text: '};',                          color: '#cdd6f4' },
-  { indent: 0, text: '',                            color: '' },
-  { indent: 0, text: 'developer.build();',          color: '#FF6B00' },
-];
 
 export default function Hero() {
   return (
@@ -88,53 +76,153 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* ── Right: Code window ── */}
+          {/* ── Right: Illustration ── */}
           <motion.div
             initial={{ opacity: 0, x: 36 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
-            className="hidden lg:block"
+            className="hidden lg:flex"
+            style={{ justifyContent: 'center', alignItems: 'center' }}
           >
-            {/* Editor window */}
-            <div style={{ background: '#0d0d0d', border: '1px solid #1e1e1e', borderRadius: 14, overflow: 'hidden', boxShadow: '0 0 60px rgba(255,107,0,0.07)' }}>
-              {/* Title bar */}
-              <div style={{ background: '#141414', borderBottom: '1px solid #1e1e1e', padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span style={{ width: 12, height: 12, borderRadius: '50%', background: '#ff5f57', display: 'inline-block' }} />
-                <span style={{ width: 12, height: 12, borderRadius: '50%', background: '#febc2e', display: 'inline-block' }} />
-                <span style={{ width: 12, height: 12, borderRadius: '50%', background: '#28c840', display: 'inline-block' }} />
-                <div style={{ marginLeft: 12, display: 'flex', alignItems: 'center', gap: 6, color: '#444', fontSize: 12 }}>
-                  <Terminal size={11} />
-                  <span>portfolio.js</span>
-                </div>
+            <div style={{ position: 'relative', width: 420, height: 420 }}>
+
+              {/* Outer glow ring */}
+              <div style={{
+                position: 'absolute', inset: 0, borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(255,107,0,0.06) 0%, transparent 70%)',
+              }} />
+
+              {/* Rotating dashed ring */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+                style={{
+                  position: 'absolute', inset: 20,
+                  borderRadius: '50%',
+                  border: '1px dashed rgba(255,107,0,0.2)',
+                }}
+              />
+
+              {/* Static ring */}
+              <div style={{
+                position: 'absolute', inset: 50,
+                borderRadius: '50%',
+                border: '1px solid rgba(255,107,0,0.08)',
+              }} />
+
+              {/* Center SVG illustration */}
+              <div style={{
+                position: 'absolute', inset: 0,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <svg width="260" height="260" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Monitor body */}
+                  <rect x="30" y="40" width="200" height="130" rx="10" fill="#111111" stroke="#1e1e1e" strokeWidth="2"/>
+                  {/* Screen */}
+                  <rect x="44" y="54" width="172" height="102" rx="6" fill="#0d0d0d"/>
+                  {/* Screen glow */}
+                  <rect x="44" y="54" width="172" height="102" rx="6" fill="url(#screenGlow)" opacity="0.4"/>
+                  {/* Code lines on screen */}
+                  <rect x="58" y="70" width="60" height="5" rx="2.5" fill="#FF6B00" opacity="0.9"/>
+                  <rect x="58" y="82" width="100" height="4" rx="2" fill="#444"/>
+                  <rect x="68" y="92" width="80" height="4" rx="2" fill="#333"/>
+                  <rect x="68" y="102" width="90" height="4" rx="2" fill="#333"/>
+                  <rect x="68" y="112" width="70" height="4" rx="2" fill="#FF8A00" opacity="0.7"/>
+                  <rect x="58" y="122" width="50" height="4" rx="2" fill="#444"/>
+                  <rect x="58" y="134" width="110" height="4" rx="2" fill="#333"/>
+                  {/* Cursor blink */}
+                  <rect x="172" y="134" width="6" height="4" rx="1" fill="#FF6B00" opacity="0.9"/>
+                  {/* Monitor stand neck */}
+                  <rect x="118" y="170" width="24" height="22" rx="2" fill="#111111" stroke="#1e1e1e" strokeWidth="1.5"/>
+                  {/* Monitor stand base */}
+                  <rect x="90" y="192" width="80" height="10" rx="5" fill="#111111" stroke="#1e1e1e" strokeWidth="1.5"/>
+                  {/* Keyboard */}
+                  <rect x="55" y="212" width="150" height="32" rx="6" fill="#111111" stroke="#1e1e1e" strokeWidth="1.5"/>
+                  {/* Keyboard rows */}
+                  {[0,1,2].map(row =>
+                    [0,1,2,3,4,5,6,7,8,9].map(col => (
+                      <rect
+                        key={`${row}-${col}`}
+                        x={62 + col * 14}
+                        y={217 + row * 9}
+                        width="10" height="6"
+                        rx="1.5"
+                        fill="#1a1a1a"
+                        stroke="#222"
+                        strokeWidth="0.5"
+                      />
+                    ))
+                  )}
+                  {/* Spacebar */}
+                  <rect x="90" y="244" width="80" height="6" rx="2" fill="#1a1a1a" stroke="#222" strokeWidth="0.5"/>
+                  {/* Decorative dots */}
+                  <circle cx="210" cy="60" r="3" fill="#FF6B00" opacity="0.6"/>
+                  <circle cx="222" cy="60" r="3" fill="#FF8A00" opacity="0.4"/>
+                  <circle cx="234" cy="60" r="3" fill="#FF6B00" opacity="0.2"/>
+                  <defs>
+                    <radialGradient id="screenGlow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="#FF6B00"/>
+                      <stop offset="100%" stopColor="transparent"/>
+                    </radialGradient>
+                  </defs>
+                </svg>
               </div>
 
-              {/* Code body */}
-              <div style={{ padding: '24px 20px', fontFamily: "'Fira Code', 'Courier New', monospace", fontSize: 13, lineHeight: 2 }}>
-                {codeLines.map((line, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -8 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.5 + i * 0.07 }}
-                    style={{ display: 'flex', paddingLeft: line.indent * 20 }}
-                  >
-                    <span style={{ color: '#2a2a2a', minWidth: 28, userSelect: 'none', fontSize: 11, paddingTop: 1 }}>
-                      {i + 1}
-                    </span>
-                    <span style={{ color: line.color }}>{line.text || '\u00A0'}</span>
-                  </motion.div>
-                ))}
-                <motion.span
-                  animate={{ opacity: [1, 0, 1] }}
-                  transition={{ duration: 1.1, repeat: Infinity }}
-                  style={{ display: 'inline-block', width: 8, height: 16, background: '#FF6B00', marginLeft: 28, verticalAlign: 'middle', borderRadius: 1 }}
-                />
-              </div>
-            </div>
+              {/* Floating badges */}
+              <motion.div
+                animate={{ y: [-6, 6, -6] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                style={{
+                  position: 'absolute', top: 40, right: 10,
+                  background: '#111', border: '1px solid #1e1e1e',
+                  borderRadius: 10, padding: '8px 14px',
+                  fontSize: 12, fontWeight: 600, color: '#FF6B00',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                }}
+              >
+                ⚛️ React.js
+              </motion.div>
 
-            {/* Status pill */}
-            <div style={{ marginTop: 12, display: 'flex', alignItems: 'center', gap: 10, padding: '10px 16px', background: '#0d0d0d', border: '1px solid #161616', borderRadius: 10, fontSize: 12, color: '#555' }}>
-              <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#4ade80', display: 'inline-block', flexShrink: 0 }} />
-              <span>Open to internships &amp; opportunities</span>
-              <span style={{ marginLeft: 'auto', color: '#FF6B00', fontWeight: 600 }}>CGPA 9.97 / 10</span>
+              <motion.div
+                animate={{ y: [6, -6, 6] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+                style={{
+                  position: 'absolute', bottom: 60, left: 5,
+                  background: '#111', border: '1px solid #1e1e1e',
+                  borderRadius: 10, padding: '8px 14px',
+                  fontSize: 12, fontWeight: 600, color: '#4ade80',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                }}
+              >
+                🟢 Node.js
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [-4, 8, -4] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                style={{
+                  position: 'absolute', bottom: 80, right: 0,
+                  background: '#111', border: '1px solid #1e1e1e',
+                  borderRadius: 10, padding: '8px 14px',
+                  fontSize: 12, fontWeight: 600, color: '#60a5fa',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                }}
+              >
+                🍃 MongoDB
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [5, -5, 5] }}
+                transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
+                style={{
+                  position: 'absolute', top: 80, left: 0,
+                  background: '#111', border: '1px solid rgba(255,107,0,0.3)',
+                  borderRadius: 10, padding: '8px 14px',
+                  fontSize: 11, fontWeight: 700, color: '#F5F5F5',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                }}
+              >
+                CGPA 9.97 ⭐
+              </motion.div>
+
             </div>
           </motion.div>
 
