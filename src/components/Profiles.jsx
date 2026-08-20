@@ -23,13 +23,13 @@ const profiles = [
 
 export default function Profiles() {
   return (
-    <section className="section" style={{ background: '#0A0A0A' }}>
+    <section className="section" style={{ background: 'var(--bg)' }}>
       <div style={{ maxWidth: 1152, margin: '0 auto', padding: '0 24px' }}>
         <motion.div {...fadeUp()}>
           <SectionHeading label="Find Me Online" title="PROFILES" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2" style={{ gap: 24 }}>
+        <div className="profiles-grid grid md:grid-cols-2" style={{ gap: 24 }}>
           {profiles.map((p, i) => {
             const { Icon } = p;
             return (
@@ -39,9 +39,9 @@ export default function Profiles() {
                     <Icon size={24} style={{ color: '#FF6B00' }} />
                   </div>
                   <div style={{ flex: 1 }}>
-                    <h3 style={{ fontSize: 17, fontWeight: 800, color: '#F5F5F5', marginBottom: 3 }}>{p.platform}</h3>
+                    <h3 style={{ fontSize: 17, fontWeight: 800, color: 'var(--text)', marginBottom: 3 }}>{p.platform}</h3>
                     <p style={{ fontSize: 12, color: '#FF6B00', fontWeight: 500, marginBottom: 12 }}>@{p.username}</p>
-                    <p style={{ fontSize: 13, lineHeight: 1.7, color: '#666', marginBottom: 20 }}>{p.description}</p>
+                    <p style={{ fontSize: 13, lineHeight: 1.7, color: 'var(--text-muted)', marginBottom: 20 }}>{p.description}</p>
                     <a href={p.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '9px 20px', fontSize: 13 }}>
                       <Icon size={14} /> {p.cta}
                     </a>

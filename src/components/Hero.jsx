@@ -10,7 +10,7 @@ export default function Hero() {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        background: '#0A0A0A',
+        background: 'var(--bg)',
         paddingTop: 68,
       }}
     >
@@ -21,7 +21,7 @@ export default function Hero() {
           <div>
             <motion.p
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-              style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', color: '#FF6B00', marginBottom: 16, textTransform: 'uppercase' }}
+              style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', color: 'var(--orange, #FF6B00)', marginBottom: 16, textTransform: 'uppercase' }}
             >
               Hello, I'm
             </motion.p>
@@ -35,14 +35,14 @@ export default function Hero() {
 
             <motion.p
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-              style={{ fontSize: 16, fontWeight: 600, color: '#FF8A00', marginBottom: 20, lineHeight: 1.5 }}
+              style={{ fontSize: 16, fontWeight: 600, color: 'var(--orange-btn, #FF8A00)', marginBottom: 20, lineHeight: 1.5 }}
             >
               CS Engineering Student &amp; Full-Stack Developer
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
-              style={{ fontSize: 15, lineHeight: 1.8, color: '#777', maxWidth: 460, marginBottom: 36 }}
+              style={{ fontSize: 15, lineHeight: 1.8, color: 'var(--text-muted)', maxWidth: 460, marginBottom: 36 }}
             >
               I build modern, scalable web applications and AI-enabled systems
               using React, Node.js, databases, and modern engineering practices.

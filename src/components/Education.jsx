@@ -11,7 +11,7 @@ export default function Education() {
           <SectionHeading label="Academic Background" title="EDUCATION" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2" style={{ gap: 24 }}>
+        <div className="edu-grid grid lg:grid-cols-2" style={{ gap: 24 }}>
 
           {/* Degree card */}
           <motion.div {...fadeLeft(0.15)} className="card card-stripe" style={{ overflow: 'hidden' }}>
@@ -19,30 +19,26 @@ export default function Education() {
               <div style={{ width: 44, height: 44, borderRadius: 10, background: 'rgba(255,107,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
                 <GraduationCap size={20} style={{ color: '#FF6B00' }} />
               </div>
-
-              <h3 style={{ fontSize: 17, fontWeight: 800, color: '#F5F5F5', marginBottom: 6, lineHeight: 1.3 }}>
+              <h3 style={{ fontSize: 17, fontWeight: 800, color: 'var(--text)', marginBottom: 6, lineHeight: 1.3 }}>
                 Sahyadri College of Engineering and Management
               </h3>
               <p style={{ fontSize: 13, fontWeight: 600, color: '#FF6B00', marginBottom: 20 }}>
                 Bachelor of Engineering — Computer Science Engineering
               </p>
-
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 24 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#777' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: 'var(--text-muted)' }}>
                   <MapPin size={13} style={{ color: '#FF6B00', flexShrink: 0 }} />
                   Mangaluru, Karnataka
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#777' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: 'var(--text-muted)' }}>
                   <Calendar size={13} style={{ color: '#FF6B00', flexShrink: 0 }} />
                   Expected Graduation: 2028
                 </div>
               </div>
-
-              {/* CGPA badge */}
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 14, padding: '14px 20px', background: 'rgba(255,107,0,0.07)', border: '1px solid rgba(255,107,0,0.18)', borderRadius: 10 }}>
                 <span style={{ fontSize: 28, fontWeight: 900, color: '#FF6B00', lineHeight: 1 }}>9.97</span>
                 <div>
-                  <p style={{ fontSize: 10, fontWeight: 700, color: '#444', textTransform: 'uppercase', letterSpacing: '0.1em' }}>CGPA</p>
+                  <p style={{ fontSize: 10, fontWeight: 700, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>CGPA</p>
                   <p style={{ fontSize: 12, fontWeight: 600, color: '#FF8A00' }}>out of 10.0</p>
                 </div>
               </div>
@@ -55,18 +51,13 @@ export default function Education() {
               <div style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(255,107,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <BookOpen size={17} style={{ color: '#FF6B00' }} />
               </div>
-              <h3 style={{ fontSize: 15, fontWeight: 700, color: '#E0E0E0' }}>Relevant Coursework</h3>
+              <h3 style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-sub)' }}>Relevant Coursework</h3>
             </div>
-
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {coursework.map((course, i) => (
-                <motion.div
-                  key={course}
-                  {...fadeUp(0.3 + i * 0.06)}
-                  style={{ display: 'flex', alignItems: 'center', gap: 12 }}
-                >
+                <motion.div key={course} {...fadeUp(0.3 + i * 0.06)} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#FF6B00', flexShrink: 0 }} />
-                  <span style={{ fontSize: 13, color: '#999' }}>{course}</span>
+                  <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>{course}</span>
                 </motion.div>
               ))}
             </div>

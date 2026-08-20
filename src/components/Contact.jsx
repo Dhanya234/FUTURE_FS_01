@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { SectionHeading, fadeUp, fadeLeft, fadeRight } from './shared';
@@ -12,7 +12,6 @@ const contactInfo = [
 const EMPTY = { name: '', email: '', subject: '', message: '' };
 
 export default function Contact() {
-  const ref = useRef(null);
   const [form, setForm] = useState(EMPTY);
   const [status, setStatus] = useState(null);
 
@@ -33,17 +32,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section section-alt" ref={ref}>
+    <section id="contact" className="section section-alt">
       <div style={{ maxWidth: 1152, margin: '0 auto', padding: '0 24px' }}>
         <motion.div {...fadeUp()}>
           <SectionHeading label="Get In Touch" title="LET'S BUILD SOMETHING TOGETHER" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-5" style={{ gap: 40, alignItems: 'start' }}>
+        <div className="contact-grid grid lg:grid-cols-5" style={{ gap: 40, alignItems: 'start' }}>
 
-          {/* ── Left: contact info ── */}
+          {/* Left — info */}
           <motion.div {...fadeLeft(0.15)} className="lg:col-span-2" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            <p style={{ fontSize: 14, lineHeight: 1.8, color: '#666', marginBottom: 8 }}>
+            <p style={{ fontSize: 14, lineHeight: 1.8, color: 'var(--text-muted)', marginBottom: 8 }}>
               Have a project idea, internship opportunity, or just want to connect?
               Feel free to reach out — I'll respond promptly.
             </p>
@@ -55,8 +54,8 @@ export default function Contact() {
                     <Icon size={16} style={{ color: '#FF6B00' }} />
                   </div>
                   <div>
-                    <p style={{ fontSize: 10, fontWeight: 700, color: '#444', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 3 }}>{label}</p>
-                    <p style={{ fontSize: 13, fontWeight: 500, color: '#D0D0D0' }}>{value}</p>
+                    <p style={{ fontSize: 10, fontWeight: 700, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 3 }}>{label}</p>
+                    <p style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-sub)' }}>{value}</p>
                   </div>
                 </div>
               );
@@ -70,20 +69,20 @@ export default function Contact() {
             </a>
           </motion.div>
 
-          {/* ── Right: form ── */}
+          {/* Right — form */}
           <motion.div {...fadeRight(0.2)} className="lg:col-span-3">
             <form onSubmit={onSubmit} className="card card-stripe" style={{ overflow: 'hidden' }}>
               <div style={{ padding: '32px' }}>
 
                 <div className="grid sm:grid-cols-2" style={{ gap: 16, marginBottom: 16 }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: '#555', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
+                    <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
                       Name <span style={{ color: '#FF6B00' }}>*</span>
                     </label>
                     <input className="form-input" type="text" name="name" value={form.name} onChange={onChange} required placeholder="Your full name" />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: '#555', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
+                    <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
                       Email <span style={{ color: '#FF6B00' }}>*</span>
                     </label>
                     <input className="form-input" type="email" name="email" value={form.email} onChange={onChange} required placeholder="your@email.com" />
@@ -91,14 +90,14 @@ export default function Contact() {
                 </div>
 
                 <div style={{ marginBottom: 16 }}>
-                  <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: '#555', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
+                  <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
                     Subject <span style={{ color: '#FF6B00' }}>*</span>
                   </label>
                   <input className="form-input" type="text" name="subject" value={form.subject} onChange={onChange} required placeholder="Internship / Project collaboration / Other" />
                 </div>
 
                 <div style={{ marginBottom: 24 }}>
-                  <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: '#555', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
+                  <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>
                     Message <span style={{ color: '#FF6B00' }}>*</span>
                   </label>
                   <textarea
@@ -124,7 +123,8 @@ export default function Contact() {
                   </div>
                 )}
 
-                <button type="submit" disabled={status === 'sending'} className="btn-primary" style={{ opacity: status === 'sending' ? 0.6 : 1, cursor: status === 'sending' ? 'not-allowed' : 'pointer' }}>
+                <button type="submit" disabled={status === 'sending'} className="btn-primary"
+                  style={{ opacity: status === 'sending' ? 0.6 : 1, cursor: status === 'sending' ? 'not-allowed' : 'pointer' }}>
                   <Send size={14} />
                   {status === 'sending' ? 'Sending…' : 'Send Message'}
                 </button>

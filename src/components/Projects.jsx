@@ -23,25 +23,22 @@ function ProjectCard({ project, index }) {
           </span>
         </div>
 
-        {/* Title */}
-        <h3 style={{ fontSize: 22, fontWeight: 900, color: '#F5F5F5', marginBottom: 4 }}>
+        <h3 style={{ fontSize: 22, fontWeight: 900, color: 'var(--text)', marginBottom: 4 }}>
           {project.title}
         </h3>
         <p style={{ fontSize: 13, fontWeight: 600, color: '#FF6B00', marginBottom: 14 }}>
           {project.subtitle}
         </p>
-
-        {/* Description */}
-        <p style={{ fontSize: 13, lineHeight: 1.8, color: '#777', marginBottom: 20 }}>
+        <p style={{ fontSize: 13, lineHeight: 1.8, color: 'var(--text-muted)', marginBottom: 20 }}>
           {project.description}
         </p>
 
         {/* Features */}
-        <div className="grid grid-cols-2" style={{ gap: '6px 12px', marginBottom: 20 }}>
+        <div className="features-grid grid grid-cols-2" style={{ gap: '6px 12px', marginBottom: 20 }}>
           {project.features.slice(0, 6).map((f) => (
             <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
               <CheckCircle2 size={11} style={{ color: '#FF6B00', flexShrink: 0 }} />
-              <span style={{ fontSize: 12, color: '#666' }}>{f}</span>
+              <span style={{ fontSize: 12, color: 'var(--text-dim)' }}>{f}</span>
             </div>
           ))}
         </div>
@@ -55,14 +52,14 @@ function ProjectCard({ project, index }) {
           ))}
         </div>
 
-        {/* Tech stack */}
+        {/* Tech */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 24 }}>
           {project.tech.map((t) => (
             <span key={t} className="tech-badge">{t}</span>
           ))}
         </div>
 
-        {/* Action buttons */}
+        {/* Buttons */}
         <div style={{ display: 'flex', gap: 10 }}>
           {project.github ? (
             <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-ghost">
@@ -91,13 +88,12 @@ function ProjectCard({ project, index }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="section" style={{ background: '#0A0A0A' }}>
+    <section id="projects" className="section" style={{ background: 'var(--bg)' }}>
       <div style={{ maxWidth: 1152, margin: '0 auto', padding: '0 24px' }}>
         <motion.div {...fadeUp()}>
           <SectionHeading label="What I've Built" title="FEATURED PROJECTS" />
         </motion.div>
-
-        <div className="grid lg:grid-cols-2" style={{ gap: 24 }}>
+        <div className="projects-grid grid lg:grid-cols-2" style={{ gap: 24 }}>
           {projects.map((project, i) => (
             <ProjectCard key={project.title} project={project} index={i} />
           ))}
