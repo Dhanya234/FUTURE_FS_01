@@ -5,7 +5,7 @@
 
 A modern, responsive personal portfolio website built with React.js and Vite, featuring a black + orange developer theme.
 
-🔗 **Live Site:** _Add your deployed URL here_
+🔗 **Live Site:** https://future-fs-01-two-sigma.vercel.app
 📁 **GitHub:** https://github.com/Dhanya234
 
 ---
