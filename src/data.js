@@ -2,7 +2,7 @@ import {
   Code2, Database, Wrench, Brain, Globe, Server
 } from 'lucide-react';
 
-export const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Education', 'Contact'];
+export const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Education', 'Certificates', 'Contact'];
 
 export const skillCategories = [
   {
@@ -86,4 +86,27 @@ export const coursework = [
   'Computer Networks',
   'Software Engineering',
   'Artificial Intelligence',
+];
+
+export const certificates = [
+  {
+    title: 'IBM Certificate',
+    issuer: 'IBM',
+    file: '/IBM certificate.pdf',
+  },
+  {
+    title: 'Associate IT Python Certificate',
+    issuer: 'Infosys Springboard',
+    file: '/Associate IT-python main certificate.pdf',
+  },
+  {
+    title: 'Linux Bash Certificate',
+    issuer: 'Infosys Springboard',
+    file: '/Linux_bash_certificate.pdf',
+  },
+  {
+    title: 'Technology Foundation Certificate',
+    issuer: 'Infosys Springboard',
+    file: '/Tech_foundation_certificate.pdf',
+  },
 ];

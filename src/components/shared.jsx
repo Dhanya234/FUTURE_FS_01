@@ -6,7 +6,7 @@ export function SectionHeading({ label, title }) {
           {label}
         </p>
       )}
-      <h2 className="text-3xl font-black tracking-tight" style={{ color: '#F5F5F5' }}>
+      <h2 className="text-3xl font-black tracking-tight" style={{ color: 'var(--text)' }}>
         {title}
       </h2>
       <div className="accent-bar" />

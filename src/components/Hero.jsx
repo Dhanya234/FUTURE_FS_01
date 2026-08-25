@@ -28,7 +28,7 @@ export default function Hero() {
 
             <motion.h1
               initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-              style={{ fontSize: 'clamp(52px, 8vw, 80px)', fontWeight: 900, letterSpacing: '-2px', color: '#F5F5F5', lineHeight: 1, marginBottom: 20 }}
+              style={{ fontSize: 'clamp(52px, 8vw, 80px)', fontWeight: 900, letterSpacing: '-2px', color: 'var(--text)', lineHeight: 1, marginBottom: 20 }}
             >
               DHANYA
             </motion.h1>
@@ -172,7 +172,7 @@ export default function Hero() {
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 style={{
                   position: 'absolute', top: 40, right: 10,
-                  background: '#111', border: '1px solid #1e1e1e',
+                  background: 'var(--bg-card)', border: '1px solid var(--border)',
                   borderRadius: 10, padding: '8px 14px',
                   fontSize: 12, fontWeight: 600, color: '#FF6B00',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
@@ -186,7 +186,7 @@ export default function Hero() {
                 transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
                 style={{
                   position: 'absolute', bottom: 60, left: 5,
-                  background: '#111', border: '1px solid #1e1e1e',
+                  background: 'var(--bg-card)', border: '1px solid var(--border)',
                   borderRadius: 10, padding: '8px 14px',
                   fontSize: 12, fontWeight: 600, color: '#4ade80',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
@@ -200,7 +200,7 @@ export default function Hero() {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 style={{
                   position: 'absolute', bottom: 80, right: 0,
-                  background: '#111', border: '1px solid #1e1e1e',
+                  background: 'var(--bg-card)', border: '1px solid var(--border)',
                   borderRadius: 10, padding: '8px 14px',
                   fontSize: 12, fontWeight: 600, color: '#60a5fa',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
@@ -214,9 +214,9 @@ export default function Hero() {
                 transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
                 style={{
                   position: 'absolute', top: 80, left: 0,
-                  background: '#111', border: '1px solid rgba(255,107,0,0.3)',
+                  background: 'var(--bg-card)', border: '1px solid rgba(255,107,0,0.3)',
                   borderRadius: 10, padding: '8px 14px',
-                  fontSize: 11, fontWeight: 700, color: '#F5F5F5',
+                  fontSize: 11, fontWeight: 700, color: 'var(--text)',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
                 }}
               >

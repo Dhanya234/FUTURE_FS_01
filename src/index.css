@@ -29,28 +29,28 @@
 }
 
 :root[data-theme="light"] {
-  --bg:          #fff0f3;
-  --bg-alt:      #ffe4ea;
-  --bg-card:     #ffffff;
-  --bg-card2:    #ffd6de;
-  --bg-input:    #ffffff;
-  --border:      #f5c0cb;
-  --border2:     #f0aab8;
-  --text:        #1a0a0e;
-  --text-sub:    #2d1018;
-  --text-muted:  #6b3040;
-  --text-dim:    #9e5060;
-  --text-faint:  #c9909a;
-  --scrollbar-track: #ffe4ea;
-  --badge-bg:    #fde8ed;
-  --badge-color: #7a2535;
-  --tech-bg:     #fde8ed;
-  --tech-color:  #7a2535;
-  --tech-border: #f5c0cb;
-  --icon-border: #f5c0cb;
-  --icon-color:  #9e5060;
-  --ghost-border:#f5c0cb;
-  --ghost-color: #7a2535;
+  --bg:          #f1eaff;
+  --bg-alt:      #e5d9ff;
+  --bg-card:     #fbf9ff;
+  --bg-card2:    #dbccff;
+  --bg-input:    #fbf9ff;
+  --border:      #d9ccf5;
+  --border2:     #c8b8eb;
+  --text:        #1e1730;
+  --text-sub:    #30254a;
+  --text-muted:  #625579;
+  --text-dim:    #89799f;
+  --text-faint:  #b7a9c7;
+  --scrollbar-track: #e5d9ff;
+  --badge-bg:    #eee8fc;
+  --badge-color: #57446f;
+  --tech-bg:     #eee8fc;
+  --tech-color:  #57446f;
+  --tech-border: #d9ccf5;
+  --icon-border: #d9ccf5;
+  --icon-color:  #89799f;
+  --ghost-border:#d9ccf5;
+  --ghost-color: #57446f;
   --orange:      #cc4400;
   --orange-btn:  #cc4400;
 }
@@ -264,6 +264,7 @@ body {
   .profiles-grid { display: flex !important; flex-direction: column !important; }
   .skills-grid { display: flex !important; flex-direction: column !important; }
   .projects-grid { display: flex !important; flex-direction: column !important; }
+  .certificates-grid { display: flex !important; flex-direction: column !important; }
   .features-grid { grid-template-columns: 1fr !important; }
 }
 

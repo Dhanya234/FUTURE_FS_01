@@ -31,7 +31,7 @@ export default function Navbar() {
   };
 
   const navBg = scrolled
-    ? dark ? 'rgba(10,10,10,0.94)' : 'rgba(248,248,248,0.94)'
+    ? dark ? 'rgba(10,10,10,0.94)' : 'rgba(241,234,255,0.94)'
     : 'transparent';
 
   const navBorder = scrolled
@@ -107,7 +107,7 @@ export default function Navbar() {
         <div
           className="md:hidden"
           style={{
-            background: dark ? 'rgba(8,8,8,0.98)' : 'rgba(248,248,248,0.98)',
+            background: dark ? 'rgba(8,8,8,0.98)' : 'rgba(241,234,255,0.98)',
             borderTop: `1px solid ${dark ? '#161616' : '#e0e0e0'}`,
             padding: '16px 24px 24px',
           }}
